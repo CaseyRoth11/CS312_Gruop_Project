@@ -1,1 +1,1 @@
-<?php header("Location: ../cs312/fuelviews/index/anotherFile.php"); ?>
+<?php header("Location: ../cs312/fuelviews/index/m1/"); ?>
