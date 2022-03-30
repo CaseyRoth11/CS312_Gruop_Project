@@ -53,6 +53,14 @@ class Controller_M1 extends Controller_Template
     public function action_colorcoordinate()
     {
         $this->template->title="Color Coordinate";
+	$tableSize = Input::post('tableSize');
+        $numberColors = Input::post('numberColors');
+        if(isset($_GET['numColors']) && isset($_GET['tableSize'])) {
+            $this->template->content=View::forge('m1/ColorTable');
+        }
+        else {
+            $this->template->content=View::forge('m1/ColorForm');
+        }
     }
 
 }
