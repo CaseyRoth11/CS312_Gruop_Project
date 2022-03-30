@@ -1,4 +1,4 @@
 <p>
     Submit Failed.<br>
-    Not all parameters were set.
+    Parameters must be integers of at least one.
 </p>
