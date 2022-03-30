@@ -50,17 +50,28 @@ class Controller_M1 extends Controller_Template
 
     }
 
-    public function action_colorcoordinate()
+   public function action_colorcoordinate()
     {
         $this->template->title="Color Coordinate";
-	$tableSize = Input::post('tableSize');
-        $numberColors = Input::post('numberColors');
-        if(isset($_GET['numColors']) && isset($_GET['tableSize'])) {
-            $this->template->content=View::forge('m1/ColorTable');
-        }
-        else {
-            $this->template->content=View::forge('m1/ColorForm');
-        }
+        $this->template->eid="~ruzuzu";
+        $this->template->content=Response::forge(View::forge('m1/ColorForm'));
     }
 
+    public function post_colorcoordinate() 
+    {
+        $this->template->title="Color Coordinate";
+        $this->template->eid="~ruzuzu";
+        $tableSize = Input::post('tableSize');
+        $numberColors = Input::post('numberColors');
+        if($tableSize && $numberColors) {
+            $this->template->content=Response::forge(View::forge('m1/ColorTable'));
+        }
+        else {
+            $fail_view = View::forge('m1/failure');
+            $data = array(
+                "failure_view" => $fail_view
+            );
+            $this->template->content=Response::forge(View::forge('m1/ColorForm', $data));
+        }
+    }
 }
