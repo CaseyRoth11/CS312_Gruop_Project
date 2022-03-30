@@ -3,15 +3,16 @@
     <meta charset="utf-8"></meta>
     <meta  name="author" content="Group 30"></meta>
     <meta name="description" content="Milestone 1"></meta>
-	<link rel="stylesheet" href="../assets/css/style.css">
+	<?php echo Asset::css('m1.css')?>
 </head>
 <body>
     <header>
-            <ul>
-                <?php echo '<li><a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/index">Homepage</a></li>' ?> | 
-                <?php echo '<li><a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/about">About Us</a></li>' ?> | 
+            <ul id="navigation">
+            <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/assets/img/logo.png">'.Asset::img('logo.png',array('id'=>'logo')).'</a>'?>
+                <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/index"><li>Homepage</li></a>' ?>  
+                <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/about"><li>About Us</li></a>' ?>  
                 <!--- Need to add the link and info for vars for color generator --->
-                <?php echo '<li><a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/colorcoordinate">Color Coordinates</a></li>' ?> | 
+                <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/colorcoordinate"><li>Color Coordinates</li></a>' ?> 
             </ul>
     </header>
     <main>
