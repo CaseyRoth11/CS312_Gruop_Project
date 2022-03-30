@@ -20,6 +20,7 @@
  * @extends  Controller
  */
 
+
 class Controller_M1 extends Controller_Template
 {
 	/**
@@ -29,6 +30,7 @@ class Controller_M1 extends Controller_Template
 	 * @return  Response
 	 */
     public $template = 'm1_template';
+    public $eid = '~croth97';
 
 	public function action_index()
 	{
@@ -37,7 +39,7 @@ class Controller_M1 extends Controller_Template
         $this->template->content= View::forge('m1/index');
         //add the data assignments for the default color page
         //put eid in quotes to make it work for you
-        $this->template->eid="~ruzuzu";
+        $this->template->eid=$this->eid;
 
     }
 
@@ -45,21 +47,21 @@ class Controller_M1 extends Controller_Template
     {
         $this->template->title="About Creative Colors LLC";
         $this->template->content=View::forge('m1/about');
-        $this->template->eid="~ruzuzu";
+        $this->template->eid=$this->eid;
 
     }
 
     public function action_colorcoordinate()
     {
         $this->template->title="Color Coordinate";
-        $this->template->eid="~ruzuzu";
+        $this->template->eid=$this->eid;
         $this->template->content=Response::forge(View::forge('m1/ColorForm'));
     }
 
     public function post_colorcoordinate() 
     {
         $this->template->title="Color Coordinate";
-        $this->template->eid="~ruzuzu";
+        $this->template->eid=$this->eid;
         $tableSize = Input::post('tableSize');
         $numberColors = Input::post('numberColors');
         if((!is_numeric($tableSize)) || (!is_numeric($numberColors))) {

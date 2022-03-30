@@ -12,7 +12,7 @@
                 <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/index"><li>Homepage</li></a>' ?>  
                 <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/about"><li>About Us</li></a>' ?>  
                 <!--- Need to add the link and info for vars for color generator --->
-                <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/colorcoordinate"><li>Color Coordinates</li></a>' ?> 
+                <?php echo '<a href="https://cs.colostate.edu:4444/'.$eid.'/cs312/fuelviews/index/m1/colorcoordinate"><li>Color <br>Coordinates</li></a>' ?> 
             </ul>
     </header>
     <main>
