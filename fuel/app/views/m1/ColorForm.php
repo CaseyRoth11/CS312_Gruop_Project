@@ -1,7 +1,4 @@
 <body>
-    <div>
-    <!-- Form Validation -->
-    </div>
 <main>
 <h1>Color Coordinates</h1>
 <div id="center">
@@ -15,7 +12,6 @@
                 This will be lettered from A to <em>m</em>(as a character eg. A=1, B=2, etc) and will react to any color choices made with the first table.<br>
                 Our generation is so advanced you will even be able to print the result so give it a try.
             </td>
-
         </tr>
     </thead>
     <tbody>
@@ -50,6 +46,15 @@
         echo Form::close();
         echo "</td>"
     ?>
+    </tr>
+    <tr>
+        <td colSpan="2">
+            <?php
+            if (isset($failure_view)) {
+            echo $failure_view;
+            }
+            ?>
+        </td>
     </tr>
     </tbody>
 </table>
