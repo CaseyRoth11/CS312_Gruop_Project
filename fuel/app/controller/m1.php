@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Fuel is a fast, lightweight, community driven PHP 5.4+ framework.
@@ -38,7 +37,7 @@ class Controller_M1 extends Controller_Template
         $this->template->content= View::forge('m1/index');
         //add the data assignments for the default color page
         //put eid in quotes to make it work for you
-        $this->template->eid="~croth97";
+        $this->template->eid="~ruzuzu";
 
     }
 
@@ -46,11 +45,11 @@ class Controller_M1 extends Controller_Template
     {
         $this->template->title="About Creative Colors LLC";
         $this->template->content=View::forge('m1/about');
-        $this->template->eid="~croth97";
+        $this->template->eid="~ruzuzu";
 
     }
 
-   public function action_colorcoordinate()
+    public function action_colorcoordinate()
     {
         $this->template->title="Color Coordinate";
         $this->template->eid="~ruzuzu";
@@ -63,19 +62,33 @@ class Controller_M1 extends Controller_Template
         $this->template->eid="~ruzuzu";
         $tableSize = Input::post('tableSize');
         $numberColors = Input::post('numberColors');
-        if($tableSize && $numberColors) {
-            $data = array(
-                "numberColors" => $numberColors,
-                "tableSize" => $tableSize
-            );
-            $this->template->content=Response::forge(View::forge('m1/ColorTable', $data));
-        }
-        else {
+        if((!is_numeric($tableSize)) || (!is_numeric($numberColors))) {
             $fail_view = View::forge('m1/failure');
             $data = array(
                 "failure_view" => $fail_view
             );
             $this->template->content=Response::forge(View::forge('m1/ColorForm', $data));
+        }
+        elseif($tableSize < 1 || $numberColors < 1) {
+            $fail_view = View::forge('m1/failure');
+            $data = array(
+                "failure_view" => $fail_view
+            );
+            $this->template->content=Response::forge(View::forge('m1/ColorForm', $data));
+        }
+        elseif($tableSize > 26 || $numberColors > 10) {
+            $fail_view = View::forge('m1/failure2');
+            $data = array(
+                "failure_view" => $fail_view
+            );
+            $this->template->content=Response::forge(View::forge('m1/ColorForm', $data));
+        }
+        elseif($tableSize && $numberColors) {
+            $data = array(
+                "numberColors" => $numberColors,
+                "tableSize" => $tableSize
+            );
+            $this->template->content=Response::forge(View::forge('m1/ColorTable', $data));
         }
     }
 }
