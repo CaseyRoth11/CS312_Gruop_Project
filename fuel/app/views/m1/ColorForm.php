@@ -1,4 +1,5 @@
 <body>
+    <h1>Color Coordinates Generation Page</h1>
     <div>
         <?php
     if (isset($failure_view)) {
