@@ -1,6 +1,10 @@
 <body>
     <div>
-    <!-- Form Validation -->
+        <?php
+    if (isset($failure_view)) {
+        echo $failure_view;
+    }
+    ?>
     </div>
 <main>
     <?php
