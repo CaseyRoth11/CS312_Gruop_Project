@@ -64,7 +64,11 @@ class Controller_M1 extends Controller_Template
         $tableSize = Input::post('tableSize');
         $numberColors = Input::post('numberColors');
         if($tableSize && $numberColors) {
-            $this->template->content=Response::forge(View::forge('m1/ColorTable'));
+            $data = array(
+                "numberColors" => $numberColors,
+                "tableSize" => $tableSize
+            );
+            $this->template->content=Response::forge(View::forge('m1/ColorTable', $data));
         }
         else {
             $fail_view = View::forge('m1/failure');
