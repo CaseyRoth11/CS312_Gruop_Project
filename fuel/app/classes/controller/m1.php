@@ -93,4 +93,17 @@ class Controller_M1 extends Controller_Template
             $this->template->content=Response::forge(View::forge('m1/ColorTable', $data));
         }
     }
+	
+	public function post_colorcoordinatetable() {
+        $this->template->title="Color Coordinate Table";
+        $this->template->eid=$this->eid;
+        $tableSize = Input::post('tableSize');
+        $numberColors = Input::post('numberColors');
+        $data = array(
+            "numberColors" => $numberColors,
+            "tableSize" => $tableSize,
+            
+        );
+        $this->template->content=Response::forge(View::forge('m1/ColorTable', $data));
+    }
 }
