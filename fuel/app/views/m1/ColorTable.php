@@ -12,7 +12,7 @@
 
 </style>
 
-<table class="tg" width: 100%">
+<table class="tg" width: 95%">
 
 <colgroup>
 
