@@ -1,4 +1,6 @@
-<?php
+<body>
+    <h1>Color Coordinate Tables</h1>
+    <?php
 
 ?>
 
@@ -12,7 +14,7 @@
 
 </style>
 
-<table class="tg" width: 95%">
+<table class="tg" width: 100%>
 
 <colgroup>
 
@@ -24,6 +26,13 @@
 
 
 <?php
+echo Form::open(array(
+    "action" => "index/m1/colorcoordinatetable",
+    "method" => "post",
+    "id" => "fuel_form"
+));
+echo Form::input('numberColors', $numberColors, array('type' => 'hidden'));
+echo Form::input('tableSize', $tableSize, array('type' => 'hidden'));
   for ($numberColors; $numberColors > 0; $numberColors--){
     $colors = array(
       'red',
@@ -36,16 +45,16 @@
       'brown',
       'black',
       'teal'
-      
-      
     );
-    
     $drop = Form::select('colorChoice', 10 - $numberColors, $colors);
-
+    
     echo '<tr><td class="tg-0pky">';
     echo $drop;
     echo '</td><td class="tg-0pky"></td></tr>';
   }
+    echo Form::input('submit', 'Submit', array('type' => 'submit'));
+    echo Form::close();
   ?>
 </tbody>
 </table>
+</body>
