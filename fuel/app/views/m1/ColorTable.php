@@ -25,7 +25,7 @@
 
 <?php
   for ($numberColors; $numberColors > 0; $numberColors--){
-    $colorOptions = array(
+    $colors = array(
       'red',
       'orange',
       'yellow',
@@ -36,9 +36,11 @@
       'brown',
       'black',
       'teal'
+      
+      
     );
     
-    $drop = Form::select('colorChoice', 10 - $numberColors, $colorOptions);
+    $drop = Form::select('colorChoice', 10 - $numberColors, $colors);
 
     echo '<tr><td class="tg-0pky">';
     echo $drop;
