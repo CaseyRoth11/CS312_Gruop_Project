@@ -19,7 +19,7 @@
         </td>
     </tr>  
     <tr>
-        <th><?php //echo Asset::img('tucker.png',array('id'=>'profile')) ?></th>
+        <th><?php echo Asset::img('tucker.png',array('id'=>'profile')) ?></th>
         <td>
             <div id="name">Tucker Martin</div> 
             <div id="major">Major: Computer Science</div>
